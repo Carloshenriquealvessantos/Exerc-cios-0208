@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex2</title>
+<style>
+td
+{
+border: 1px solid;
+width: auto;
+height: 50px;
+font-family: Arial;
+}
+</style>
+<script lang="JavaScript">
+function processo()
+{   
+document.getElementById("alvo").innerHTML = ''; 
+var carac, num, i;
+carac = document.frm.txtCarac.value;
+num = document.frm.txtNum.value;
+for (i=0; i<num; i++)
+{
+document.getElementById("alvo").innerHTML += carac; 
+}
+}
+</script>
+</head>
+<body>
+ 
+</body>
+<form name="frm">
+Caracter: <input type="text" name="txtCarac" value=""><br>
+Número: <input type="text" name="txtNum" value=""><br>
+<input type="button" value="OK" onclick="processo()">
+</form>
+<table>
+<td id="alvo"></td>
+</table>
+</html>

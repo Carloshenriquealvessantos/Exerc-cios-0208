@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex3</title>
+<script lang="JavaScript">
+function dados()
+{
+var string, contVogal, contConsoante, contNum, contCarac, i;
+string = document.frm.txtCarac.value.toLowerCase();
+contVogal = 0;
+contConsoante = 0;
+contNum = 0;
+contCarac = 0;
+
+document.getElementById("alvo1").innerHTML = '';
+document.getElementById("alvo2").innerHTML = '';
+document.getElementById("alvo3").innerHTML = '';
+document.getElementById("alvo4").innerHTML = '';
+for (i = 0; i<string.length; i++)
+{
+if(string.charAt(i) == "a" || string.charAt(i) == "e" || string.charAt(i) == "i" || string.charAt(i) == "o" || string.charAt(i) == "u")
+{
+contVogal++;
+}
+else if (string.charAt(i) == "b" || string.charAt(i) == "c" || string.charAt(i) == "d" || string.charAt(i) == "f" || string.charAt(i) == "g" || 
+string.charAt(i) == "h" || string.charAt(i) == "j" || string.charAt(i) == "k" || string.charAt(i) == "l" || string.charAt(i) == "m" ||
+string.charAt(i) == "n" || string.charAt(i) == "p" || string.charAt(i) == "q" || string.charAt(i) == "r" || string.charAt(i) == "s" ||
+string.charAt(i) == "t" || string.charAt(i) == "v" || string.charAt(i) == "w" || string.charAt(i) == "x" || string.charAt(i) == "y" || string.charAt(i) == "z")
+{
+contConsoante++;
+}
+else if (string.charAt(i) == "0" || string.charAt(i) == "1" || string.charAt(i) == "2" || string.charAt(i) == "3" || string.charAt(i) == "4" ||
+string.charAt(i) == "5" || string.charAt(i) == "6" || string.charAt(i) == "7" || string.charAt(i) == "8" || string.charAt(i) == "9")
+{
+contNum++;
+}
+else
+{
+contCarac++;
+}
+}
+document.getElementById("alvo1").innerHTML = contVogal;
+document.getElementById("alvo2").innerHTML = contConsoante;
+document.getElementById("alvo3").innerHTML = contNum;
+document.getElementById("alvo4").innerHTML = contCarac;
+}
+</script>
+<style>
+td
+{
+border: 2px solid;
+width: 215px;
+height: 50px;
+text-align: center;
+}
+body
+{
+font-family: Arial;
+}
+</style>
+</head>
+<body>
+<center>
+<form name="frm">
+String: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="dados()">
+</form>
+<table>
+<tr>
+<td>Número de vogais</td>
+<td>Número de consoantes</td>
+<td>Número de dígitos</td>
+<td>Número de outros caracteres</td>
+</tr>
+<tr>
+<td id = "alvo1"></td>
+<td id ="alvo2"></td>
+<td id ="alvo3"></td>
+<td id ="alvo4"></td>
+</tr>
+</table>
+</center>
+</body>
+</html>

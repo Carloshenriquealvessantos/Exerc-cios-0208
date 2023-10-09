@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex4</title>
+<script lang="JavaScript">
+function palindromo() 
+{
+var stringOriginal, stringPali1, stringPali2, fim, inicio;
+stringOriginal = document.frm.txtCarac.value.toLowerCase(); 
+stringPali1 = '';
+stringPali2 = '';
+for (inicio = 0; inicio < stringOriginal.length; inicio++) 
+{
+if (stringOriginal.charAt(inicio) != " " && stringOriginal.charAt(inicio) != ".")
+{
+stringPali1 += stringOriginal.charAt(inicio);
+}
+}
+for (fim = stringPali1.length- 1; fim >= 0; fim--) 
+{
+stringPali2 += stringPali1.charAt(fim);
+}
+if (stringPali1 == stringPali2) 
+{
+document.getElementById("alvo").innerHTML = "É um palíndromo.";
+} 
+else 
+{
+document.getElementById("alvo").innerHTML = "Não é um palíndromo.";
+}
+}
+</script>
+</head>
+<body>
+<center>
+<form name="frm">
+String: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="palindromo()">
+</form>
+<p id="alvo">
+</p>
+</center>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex1</title>
+<style>
+.ex1 
+{
+text-align: center;
+display: flex;
+font-family: Arial;
+flex-direction: row;
+}
+.ex2
+{
+text-align: center;
+display: flex;
+font-family: Arial;
+flex-direction: column;
+}
+.bl 
+{
+border: 1px solid;
+border-radius: 5px;
+width: 40px;
+height: 20px;
+}
+</style>
+<script lang="JavaScript">
+function processo()
+{
+var string, i, tamanho, bl, ex1, ex2;
+string = document.frm.txtCarac.value;
+tamanho = string.length;
+ex1 = document.querySelector('.ex1');            
+for (i = 0; i<tamanho; i++)
+{
+  
+bl = document.createElement('td');
+bl.className = 'bl';
+bl.textContent = string.charAt(i);
+ex1.appendChild(bl);
+}
+ex2 = document.querySelector('.ex2');  
+for (i = 0; i<tamanho; i++)
+{
+bl = document.createElement('td');
+bl.className = 'bl';
+bl.textContent = string.charAt(i);
+ex2.appendChild(bl);
+}        
+}
+</script>
+</head>
+<body>
+<center>
+<form name="frm">
+String: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="processo()">
+</form>
+</center>
+</body>
+<table class="ex1">
+</table>
+<table class="ex2">
+</table>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex5</title>
+<script lang="JavaScript">
+function catTelefone() 
+{
+var string, strArr, i;
+string = document.frm.txtCarac.value.toLowerCase();
+strArr = string.split(' ');
+strArr[strArr.length - 1] = strArr[strArr.length - 1].charAt(0).toUpperCase() + strArr[strArr.length - 1].slice(1);
+ strArr[0] = strArr[0].charAt(0).toUpperCase() + strArr[0].slice(1);
+if (strArr[strArr.length - 2] == "de" || strArr[strArr.length - 2] == "da" || strArr[strArr.length - 2] == "do" || strArr[strArr.length - 2] == "das" || strArr[strArr.length - 2] == "dos") 
+{
+document.getElementById("alvo").innerHTML = strArr[strArr.length - 2] + " " + strArr[strArr.length - 1] + ", ";
+document.getElementById("alvo").innerHTML += strArr[0] + " ";
+for (i = 1; i < strArr.length - 2; i++) 
+{
+if (strArr[i] == "de" || strArr[i] == "da" || strArr[i] == "do" || strArr[i] == "das" || strArr[i] == "dos") 
+{
+document.getElementById("alvo").innerHTML += strArr[i] + " ";
+} 
+else 
+{
+strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
+document.getElementById("alvo").innerHTML += strArr[i] + " ";
+}
+}
+} 
+else 
+{
+document.getElementById("alvo").innerHTML = strArr[strArr.length - 1] + ", ";
+document.getElementById("alvo").innerHTML += strArr[0] + " ";
+for (i = 1; i < strArr.length - 1; i++) 
+{
+if (strArr[i] == "de" || strArr[i] == "da" || strArr[i] == "do" || strArr[i] == "das" || strArr[i] == "dos")
+{
+document.getElementById("alvo").innerHTML += strArr[i] + " ";
+}    
+else 
+{
+strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
+document.getElementById("alvo").innerHTML += strArr[i] + " ";
+}
+}
+}
+}
+</script>
+</head>
+<body>
+<center>
+<form name="frm">
+Nome: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="catTelefone()">
+</form>
+<p id="alvo">
+</p>
+</center>
+</body>
+</html>
